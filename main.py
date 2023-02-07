@@ -3,13 +3,13 @@ import pyperclip
 
 
 def get_delay(x):
-    if x <= 14:
+    if x <= 15:
         return 65
 
-    if x <= 22:
+    if x <= 23:
         return 105
 
-    if x <= 24:
+    if x <= 25:
         return 125
 
     return 0
@@ -39,6 +39,7 @@ def get_message(x):
 #
 
 print("ID Start time:", time.ctime())
+
 wave = 1
 while wave < 25:
     print('Round {}'.format(wave) + ' has landed')
@@ -47,9 +48,11 @@ while wave < 25:
     delay = get_delay(wave)
     message = get_message(wave)
 
-    time.sleep(delay)
     if len(message) > 0:
         print(message)
         pyperclip.copy(message)
 
+    time.sleep(delay)
+
+# the end
 print("ID is over")
